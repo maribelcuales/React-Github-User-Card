@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from "axios";
+import UserCard from "./components/UserCard";
 
 class App extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User Card</h1>
+        <UserCard />
       </div>
     );
   }
