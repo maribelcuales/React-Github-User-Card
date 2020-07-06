@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import axios from "axios";
 
 class App extends React.Component {
   constructor() {
@@ -7,7 +8,17 @@ class App extends React.Component {
     this.state = {
       user: [],
       followers: []
-    }
+    };
+  }
+
+  componentDidMount() {
+    axios.get("https://api.github.com/users/maribelcuales")
+    .then(response => {
+      console.log(response);
+      this.setState({
+        user: response.data
+      })
+    });
   }
 
   render() {
