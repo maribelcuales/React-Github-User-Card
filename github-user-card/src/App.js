@@ -25,8 +25,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Github User Card</h1>
-        <UserCard githubUser={this.state.githubUser}/>
+        <div className="header">
+          <h1>Github User Card</h1>
+          <UserCard githubUser={this.state.githubUser}/>
+        </div>
       </div>
     );
   }
