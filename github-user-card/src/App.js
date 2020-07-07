@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from "axios";
 import UserCard from "./components/UserCard";
+import Followers from "./components/Followers";
 
 class App extends React.Component {
   constructor() {
@@ -20,9 +21,6 @@ class App extends React.Component {
         githubUser: response.data
       });
     });
-  }
-
-  fetchFollowers() {
     axios.get("https://api.github.com/users/maribelcuales/followers")
     .then(response => {
       console.log("Getting Followers!", response);
@@ -37,7 +35,10 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h1>Github User Card</h1>
+        </div>
+        <div className="cards-container">
           <UserCard githubUser={this.state.githubUser}/>
+          <Followers followers={this.state.followers}/> 
         </div>
       </div>
     );
