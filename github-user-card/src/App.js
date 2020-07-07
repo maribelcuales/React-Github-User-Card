@@ -22,6 +22,16 @@ class App extends React.Component {
     });
   }
 
+  fetchFollowers() {
+    axios.get("https://api.github.com/users/maribelcuales/followers")
+    .then(response => {
+      console.log("Getting Followers!", response);
+      this.setState({
+        followers: response.data
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
