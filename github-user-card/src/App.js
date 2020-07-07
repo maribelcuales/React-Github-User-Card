@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: [],
+      githubUser: [],
       followers: []
     };
   }
@@ -17,8 +17,8 @@ class App extends React.Component {
     .then(response => {
       console.log(response);
       this.setState({
-        user: response.data
-      })
+        githubUser: response.data
+      });
     });
   }
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User Card</h1>
-        <UserCard />
+        <UserCard githubUser={this.state.githubUser}/>
       </div>
     );
   }
